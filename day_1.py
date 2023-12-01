@@ -1,4 +1,4 @@
-import re
+import regex as re
 
 
 def read_input(filename):
@@ -26,7 +26,7 @@ def extract_first_and_last_int(line):
 
     string_to_integer = {"one":1, "two":2, "three":3, "four":4, "five":5, "six":6, "seven":7, "eight":8, "nine":9}
     match_string = create_match_string(string_to_integer)
-    list_of_digits = re.findall(match_string, line)
+    list_of_digits = re.findall(match_string, line, overlapped=True)
 
     first, last = "not a", " number"
     first = convert_string_to_digit(list_of_digits[0], string_to_integer)
@@ -44,6 +44,7 @@ def main():
         number = extract_first_and_last_int(line)
         numbers.append(number)
     print(f"Sum of numbers: {sum(numbers)}")
+
 
 if __name__ == "__main__":
     main()
