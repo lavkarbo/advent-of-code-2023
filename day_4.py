@@ -34,12 +34,12 @@ def part_1(filename: str) -> None:
     print(f"Points: {all_points}. Sum: {sum(all_points)}")
 
 
-def count_winning(winning_numbers, drawn_numbers):
+def count_winning(winning_numbers: list, drawn_numbers: list) -> int:
     winning = set(winning_numbers).intersection(set(drawn_numbers))
     return len(winning)
 
 
-def count_copied_cards(cards: dict, card_number: int, count_winning_numbers: int):
+def count_copied_cards(cards: dict, card_number: int, count_winning_numbers: int) -> None:
     for card_offset in range(count_winning_numbers):
         next_card = int(card_number) + int(card_offset) + 1
         cards[next_card] += 1

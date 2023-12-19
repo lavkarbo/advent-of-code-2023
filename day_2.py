@@ -9,12 +9,15 @@ def possible_games_from_max(games, min_red, min_green, min_blue):
         print(f"Game {game_number}: {rounds}")
         max_red, max_green, max_blue = 0, 0, 0
         for red, green, blue in rounds:
-            if red>max_red: max_red = red
-            if green>max_green: max_green = green
-            if blue>max_blue: max_blue = blue
+            if red > max_red:
+                max_red = red
+            if green > max_green:
+                max_green = green
+            if blue > max_blue:
+                max_blue = blue
 
         print(f"{max_red=}, {max_green=}, {max_blue=}")
-        if max_red<=min_red and max_green<=min_green and max_blue<=min_blue:
+        if max_red <= min_red and max_green <= min_green and max_blue <= min_blue:
             possible_games.append(game_number)
     return possible_games
 
@@ -61,10 +64,13 @@ def get_power_of_games(games):
     for rounds in games.values():
         min_red, min_green, min_blue = 0, 0, 0
         for red, green, blue in rounds:
-            if red>min_red: min_red = red
-            if green>min_green: min_green = green
-            if blue>min_blue: min_blue = blue
-        powers.append(min_red*min_green*min_blue)
+            if red > min_red:
+                min_red = red
+            if green > min_green:
+                min_green = green
+            if blue > min_blue:
+                min_blue = blue
+        powers.append(min_red * min_green * min_blue)
     return powers
 
 
